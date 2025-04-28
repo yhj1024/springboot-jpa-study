@@ -1,5 +1,26 @@
 spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create # 자동으로 테이블을 생성하는 옵션
+    properties:
+      hibernate:
+#        show_sql: true # sql 보여짐, logging 을 통해 처리하므로 주석 처리, show sql은 sysout 기반 운영에서는 logging 처리를 해야하므로 필요없음
+        format_sql: true # sql 포매팅
+#  기타 properties 확인
+#  하이버네이트 공식 문서:
+#  https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#configurations
+#  스프링 부트 속성 문서:
+#  https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.data.spring.jpa.show-sql
   application:
     -name: jpashop
+logging:
+  level:
+    org.hibernate.SQL: debug # 하이버네이트 로그를 디버그 레벨로 처리한다
+    org.hibernate.type: trace # 이러면 쿼리 ? 아랫줄에 파라미터 확인 가능, 추가로 더 확인하고 싶으면 라이브러리들이 있음 예)datasource-decorator
 server:
   -port: 8081

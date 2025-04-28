@@ -28,6 +28,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-devtools'
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0' // 다른건 버전 정보가 없는데, 여기에는 정보가 붙는 이유 : 스프링 부트에서 버전에 맞는 라이브러리를 모두 세팅을 해놔서 그럼, 준비가 안된건 버전 정보 기입 필요함
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
